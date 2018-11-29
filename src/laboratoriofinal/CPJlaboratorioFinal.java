@@ -6,9 +6,9 @@ import laboratoriofinal.mx.com.gm.peliculas.domain.Pelicula;
 import laboratoriofinal.mx.com.gm.peliculas.negocio.CatalogoPeliculasImpl;
 
 
-public class LaboratorioFinal {
+public class CPJlaboratorioFinal {
 
-    private static final String NOMBRE_ARCHIVO="C:\\Users\\Carlos\\Desktop\\CatalogoPeliculas\\catalogoPeliculas\\catalogoPeliculas\\peliculas.txt";
+    private static final String NOMBRE_ARCHIVO="C:\\LabFinal\\laboratorioFinal\\fileTxtpeliculas.txt";
    
     public static void main(String[] args) throws IOException {
         Scanner s = new Scanner(System.in);

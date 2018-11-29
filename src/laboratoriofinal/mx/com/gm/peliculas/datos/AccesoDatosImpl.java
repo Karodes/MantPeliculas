@@ -25,7 +25,7 @@ public class AccesoDatosImpl implements AccesoDatos {
             result = true;
         } else {
             result = false;
-            /////hola
+           
         }
         return result;
     }
