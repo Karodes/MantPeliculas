@@ -13,12 +13,15 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import laboratoriofinal.mx.com.gm.peliculas.domain.Pelicula;
+import laboratoriofinal.mx.com.gm.peliculas.excepciones.AccesoDatosEx;
+import laboratoriofinal.mx.com.gm.peliculas.excepciones.EscrituraDatosEx;
+import laboratoriofinal.mx.com.gm.peliculas.excepciones.LecturaDatosEx;
 
 
 public class AccesoDatosImpl implements AccesoDatos {
 
     @Override
-    public boolean existe(String nombreArchivo) {
+    public boolean existe(String nombreArchivo) throws AccesoDatosEx{
         File archivo = new File(nombreArchivo);
         boolean result;
         if (archivo.exists()) {
@@ -31,7 +34,7 @@ public class AccesoDatosImpl implements AccesoDatos {
     }
 
     @Override
-    public List<Pelicula> listar(String nombre) {
+    public List<Pelicula> listar(String nombre) throws LecturaDatosEx{
         //declaro un arreglo de tipo Pelicula
         List<Pelicula> pelicula=new ArrayList<>();
         
@@ -45,11 +48,13 @@ public class AccesoDatosImpl implements AccesoDatos {
                 Logger.getLogger(AccesoDatosImpl.class.getName()).log(Level.SEVERE, null, ex);
             }
             String lectura = null;
+            
             try {
                 lectura = entrada.readLine();
             } catch (IOException ex) {
                 Logger.getLogger(AccesoDatosImpl.class.getName()).log(Level.SEVERE, null, ex);
             }
+           
             while (lectura != null) {
                 //Creo un objeto simple tipo pelicula para llenar arreglo tipo pelicula
                 Pelicula peliculalec = new Pelicula(lectura);
@@ -72,7 +77,7 @@ public class AccesoDatosImpl implements AccesoDatos {
     }
 
     @Override
-    public void escribir(Pelicula pelicula, String nombreArchivo, boolean anexar) {
+    public void escribir(Pelicula pelicula, String nombreArchivo, boolean anexar) throws EscrituraDatosEx{
         File archivo = new File(nombreArchivo);
         PrintWriter salida = null;
         try {
