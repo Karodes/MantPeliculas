@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Scanner;
 import laboratoriofinal.mx.com.gm.peliculas.domain.Pelicula;
 import laboratoriofinal.mx.com.gm.peliculas.negocio.CatalogoPeliculasImpl;
+import vistas.Menu;
 
 
 public class CPJlaboratorioFinal {
@@ -11,6 +12,13 @@ public class CPJlaboratorioFinal {
     private static final String NOMBRE_ARCHIVO="C:\\LabFinal\\laboratorioFinal\\fileTxtpeliculas.txt";
    
     public static void main(String[] args) throws IOException {
+    //================Llamada de menu============================    
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Menu().setVisible(true);
+            }
+        });
+    //============================================================    
         Scanner s = new Scanner(System.in);
         int opcion;
         CatalogoPeliculasImpl catalogoPeliculas;
