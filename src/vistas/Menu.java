@@ -51,6 +51,11 @@ public class Menu extends javax.swing.JFrame {
         jMenu1.add(itemAgregarPelicula);
 
         itemListarPeliculas.setText("Listar Peliculas");
+        itemListarPeliculas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemListarPeliculasActionPerformed(evt);
+            }
+        });
         jMenu1.add(itemListarPeliculas);
 
         itemBuscarPelicula.setText("Buscar Pelicula");
@@ -98,6 +103,11 @@ public class Menu extends javax.swing.JFrame {
             Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_itemInicializarActionPerformed
+
+    private void itemListarPeliculasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemListarPeliculasActionPerformed
+        new ListarPeliculas().setVisible(true);
+        
+    }//GEN-LAST:event_itemListarPeliculasActionPerformed
 
     /**
      * @param args the command line arguments
