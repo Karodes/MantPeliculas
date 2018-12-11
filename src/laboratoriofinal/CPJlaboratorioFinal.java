@@ -18,7 +18,7 @@ public class CPJlaboratorioFinal {
                 new Menu().setVisible(true);
             }
         });
-    //============================================================    
+    //============================================================ 
         Scanner s = new Scanner(System.in);
         int opcion;
         CatalogoPeliculasImpl catalogoPeliculas;

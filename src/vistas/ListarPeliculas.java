@@ -96,21 +96,22 @@ public class ListarPeliculas extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
-        listarPeliculas(String archivo);
-            /*    try {
-            List<Pelicula>pelicula = new ArrayList<>();
+        try {
+            // listarPeliculas(String archivo);
+            List<Pelicula> pelicula = new ArrayList<>();
             pelicula=datos.listar(NOMBRE_ARCHIVO);
-            } catch (LecturaDatosEx ex) {
-            Logger.getLogger(ListarPeliculas.class.getName()).log(Level.SEVERE, null, ex);
-            }
             for (Pelicula peli:pelicula){
-            lstListaPeliculas.addElement(peli.getNombre());
-            }*/
+                listModel.addElement(peli.getNombre());
+            }
+            lstListaPeliculas.setModel(listModel);
+        } catch (LecturaDatosEx ex) {
+            Logger.getLogger(ListarPeliculas.class.getName()).log(Level.SEVERE, null, ex);
+        }
             
         
     }//GEN-LAST:event_btnListarActionPerformed
 
-    public void listarPeliculas(NOMBRE_ARCHIVO){
+    public void listarPeliculas(String NOMBRE_ARCHIVO){
         
     }
     public static void main(String args[]) {
